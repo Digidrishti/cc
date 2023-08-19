@@ -1,0 +1,106 @@
+<header></header>
+<div *ngIf="wishlish">
+
+<div class="row">
+
+    <div class="col-md-9 ps-4">
+        <h4 class="mt-3">
+            WishList
+        </h4>
+            <ngx-datatable #datatable class="material striped mb-4 p-2" [columnMode]="'force'" [headerHeight]="30"
+                [rowHeight]="'auto'" [scrollbarH]="true" [limit]="50" [rows]='data'>
+                <ngx-datatable-column name="Product Id" [width]="10" [sortable]="true" [resizeable]="true">
+                    <ng-template let-row="row" let-expanded="expanded" ngx-datatable-cell-template>
+                        <div>
+                            <u>
+                                {{ row.id1 }}
+                            </u>
+                        </div>
+                    </ng-template>
+                </ngx-datatable-column>
+                <ngx-datatable-column name="Product Image" [width]="100" [sortable]="true" [resizeable]="true">
+                    <ng-template let-row="row" let-expanded="expanded" ngx-datatable-cell-template>
+                        <div>
+                            <img class="mobile" src="./../../../assets/chiken/{{row.im}}.jpg" width="25%">
+                        </div>
+                    </ng-template>
+                </ngx-datatable-column>
+
+                <ngx-datatable-column name="Product Name" [width]="100" [sortable]="true" [resizeable]="true">
+                    <ng-template let-row="row" let-expanded="expanded" ngx-datatable-cell-template>
+                        {{ row.n }}
+                    </ng-template>
+                </ngx-datatable-column>
+                <ngx-datatable-column name="Weight" [width]="100" [sortable]="true" [resizeable]="true">
+                    <ng-template let-row="row" let-expanded="expanded" ngx-datatable-cell-template>
+                        500 gm
+                    </ng-template>
+                </ngx-datatable-column>
+                <ngx-datatable-column name="Price" [width]="180" [sortable]="true" [resizeable]="true">
+                    <ng-template let-row="row" let-expanded="expanded" ngx-datatable-cell-template>
+                        {{ row.price }} ₹
+                    </ng-template>
+                </ngx-datatable-column>
+            </ngx-datatable>
+       
+
+    </div>
+
+    <div class="col-md-3 px-4 mt-5">
+        <div class="card px-2 card-title ">
+            <div class="card-header bg-white">
+                <span class="">Price Details</span>
+            </div>
+            <div class="card-body ">
+                <div class="row">
+                    <div class="col-8">
+                        <div>
+                            Total Price:
+                        </div>
+                        <div>
+                            Discount:
+                        </div>
+                        <div>
+                            Delivery charges:
+                        </div>
+                    </div>
+                    <div class="col-4 text-end">
+                        <div>
+                            {{Price}} ₹
+                        </div>
+                        <div>
+                            20 ₹
+                        </div>
+                        <div>
+                            20 ₹
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-8">
+                        Total Amount
+                    </div>
+                    <div class="col-4 text-end">
+                        {{Price}}₹
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer bg-white">
+                <button type="button" class="btn btn-outline-warning" style="width: 100%;" routerLink="/kart"
+                    routerLinkActive="active">BUY NOW</button>
+            </div>
+        </div>
+    </div>
+    
+</div>
+</div>
+
+<div *ngIf="!wishlish" class="text-center mt-2">
+    <h4>
+        !!!Oops Nothing in your Wishlist
+    </h4>
+</div>
+<div class="fixed-bottom">
+    <footer ></footer>
+</div>

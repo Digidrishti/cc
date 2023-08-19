@@ -1,0 +1,71 @@
+<header></header>
+<div class="row justify-content-center my-3 p-2 ">
+    <div class="col-md-5 ">
+        <div id="productImg">
+            <img src="./../../../assets/chiken/{{data.im}}.jpg" class="border shadow">
+        </div>
+        <br>
+        <div class="imgdiv ;  border shadow-lg">
+            <img src="./../../../assets/chiken/{{data.im}}.jpg" width="25%">
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <h3>
+            {{data.n}}
+        </h3>
+        <button class="btn btn-outline-info">
+            500gm
+        </button>
+        <div class="col-6">
+            <div class="card px-2 card-title mt-2">
+                <div class="card-header bg-white">
+                    <span class="">Price Details</span>
+                </div>
+                <div class="card-body ">
+                    <div class="row">
+                        
+                        <div class="col-8">
+                            <div>
+                                Price:
+                            </div>
+                            <div>
+                                Discount:
+                            </div>
+                            <div>
+                                Delivery charges:
+                            </div>
+                        </div>
+                        <div class="col-4 text-end">
+                            <div>
+                                {{data.price}} ₹
+                            </div>
+                            <div>
+                                20 ₹
+                            </div>
+                            <div>
+                                20 ₹
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="col-8">
+                            Total
+                        </div>
+                        <div class="col-4 text-end">
+                            300 ₹
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+            <div class="mt-4 justify-content-end">
+                <button type="button" class="btn btn-outline-warning me-3" routerLink="/add-to-kart" (click)="gotoCart(data)"
+                    >Add To Cart</button>
+                <button type="button" class="btn btn-warning" routerLink="/kart" routerLinkActive="active"
+                   >Buy Now</button>
+            </div>
+            
+        </div>
+    </div>
+</div>
+<footer></footer>

@@ -1,0 +1,46 @@
+<div class="container-fluid mt-2 ">
+    <div class="row justify-content-between p-2">
+        <span class="col-8">
+            <h3> Chicken </h3>
+        </span>
+        <span class="col-4">
+            <button class="btn btn-warning btn-sm float-end">View All</button>
+        </span>
+    </div>
+    <div>
+        <div class="row row-cols-2 row-cols-sm-2 row-cols-md-4 p-2">
+            <div *ngFor="let phone of smartphones" class="col">
+                <section class="product-section">
+                    <div class="wishlist-icons">
+                        <img src="./../../../assets/fav.svg" id="heart"  *ngIf="!phone.fav"
+                            class="favbutton" (click)="wishlist(phone)">
+                        <img src="./../../../assets/fav_red.png" id="heart" *ngIf="phone.fav"
+                            class="favbutton" (click)="unwishlist(phone)">
+                    </div>
+                    <div class="mobile-image" (click)="gotoDetails(phone)">
+                        <img class="mobile" src="./../../../assets/chiken/{{phone.im}}.jpg">
+
+                    </div>
+                    <div class="Details row px-2">
+                        <div class="productname col-md-6">
+                            <h5>{{phone.n}}</h5>
+                        </div>
+                        <div class=" text-secondary">
+                            500gm
+                        </div>
+                        <div class="row pe-0">
+                            <div class="EMIcard col-6">
+                                From ₹{{ phone.price}}
+                            </div>
+                            <div class="buynow col-6 pe-0">
+                                <div class="btn btn-sm  " (click)="gotoCart(phone)">
+                                    BUY NOW
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>
